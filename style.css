@@ -1,0 +1,551 @@
+/* ================= THEME SYSTEM (MODERN BLUE TECH) ================= */
+:root {
+
+    /* Background */
+    --bg-gradient: linear-gradient(
+        135deg,
+        #050b1a 0%,
+        #071a33 40%,
+        #0b2a4a 70%,
+        #061225 100%
+    );
+
+    /* Glass UI */
+    --card: rgba(255, 255, 255, 0.06);
+    --card-border: rgba(120, 180, 255, 0.15);
+
+    /* Text */
+    --text: #e6f1ff;
+    --muted: #9bb4d4;
+
+    /* Primary */
+    --primary: #4da3ff;
+    --primary-dark: #1e6fff;
+
+    /* Danger */
+    --danger: #ff4d6d;
+
+    /* Glow */
+    --glow: 0 0 12px rgba(77, 163, 255, 0.35);
+}
+
+
+/* ================= GLOBAL ================= */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--bg-gradient);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: var(--text);
+}
+
+
+/* ================= MOBILE CONTAINER ================= */
+.container {
+    width: 100%;
+    max-width: 480px;
+
+    margin: 0 auto;
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    box-sizing: border-box;
+}
+
+
+/* ================= GLASS CARDS ================= */
+.upload-card,
+.card,
+.settings-panel,
+#menu,
+#print_panel {
+    background: var(--card);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    border: 1px solid var(--card-border);
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+
+    color: var(--text);
+    padding: 16px;
+}
+
+
+/* ================= HEADER ================= */
+.app-header {
+    text-align: center;
+}
+
+.app-title {
+    font-size: 28px;
+    font-weight: 800;
+
+    background: linear-gradient(90deg, #4da3ff, #7c4dff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow: var(--glow);
+}
+
+.app-slogan {
+    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+}
+
+
+/* ================= CAMERA ================= */
+.camera-box {
+    width: 100%;
+    height: 55vh;
+    max-height: 320px;
+    min-height: 220px;
+
+    background: black;
+    border-radius: 15px;
+
+    overflow: hidden;
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.camera-box video,
+.camera-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+
+/* ================= ACTION BUTTONS ================= */
+.upload-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.upload-actions button {
+    width: 70px;
+    height: 70px;
+
+    border-radius: 50%;
+    border: none;
+
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+
+    font-size: 13px;
+
+    cursor: pointer;
+}
+
+
+/* ================= MAIN BUTTONS ================= */
+button {
+    font-size: 16px;
+    padding: 12px 16px;
+
+    border-radius: 12px;
+    border: none;
+
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glow);
+}
+
+
+/* Detect / Cancel */
+/* ================= BUTTON DOCK (ATTACHED TO CONTAINER) ================= */
+.action-row {
+    display: flex;
+    gap: 0; /* IMPORTANT: no gap so it feels attached */
+    margin-top: 10px;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+    border: 1px solid rgba(120, 180, 255, 0.25);
+}
+
+.detect-btn {
+    flex: 1;
+
+    padding: 14px;
+    border: none;
+
+    background: linear-gradient(135deg, #2e7dff, #1b4fd6);
+    color: white;
+
+    font-weight: 600;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    border-radius: 0; /* IMPORTANT: handled by container */
+}
+
+.cancel-btn {
+    flex: 1;
+
+    padding: 14px;
+    border: none;
+
+    background: linear-gradient(135deg, #ff4d4d, #c62828);
+    color: white;
+
+    font-weight: 600;
+    font-size: 15px;
+
+    cursor: pointer;
+
+    border-radius: 0;
+}
+
+
+/* ================= ACTION ROW ================= */
+.action-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+
+/* ================= REPORT ================= */
+.report-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.report-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--card-border);
+
+    color: var(--text);
+
+    padding: 14px;
+    border-radius: 12px;
+
+    min-height: 120px;
+    line-height: 1.6;
+}
+
+
+/* ================= MENU ================= */
+#menu-btn {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+
+    width: 56px;
+    height: 56px;
+
+    border-radius: 14px;
+    font-size: 24px;
+
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+
+    z-index: 10000;
+}
+
+#menu {
+    position: fixed;
+    right: 20px;
+    top: 80px;
+
+    width: 220px;
+
+    transform: translateX(120%);
+    transition: 0.3s ease;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    z-index: 9999;
+}
+
+#menu.open {
+    transform: translateX(0%);
+}
+
+#menu button {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+
+    padding: 10px;
+    border-radius: 10px;
+}
+
+
+/* ================= INPUTS ================= */
+input,
+select {
+    width: 100%;
+    font-size: 16px;
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--card-border);
+    color: var(--text);
+}
+
+
+/* ================= SETTINGS PANEL ================= */
+.settings-panel {
+    position: fixed;
+    top: 60px;
+    right: 20px;
+
+    width: 280px;
+    z-index: 99999;
+}
+
+
+/* ================= LANGUAGE ================= */
+.lang-box {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* ================= TEXT COLORS ================= */
+.muted {
+    color: var(--muted);
+}
+
+/* ================= THEMES ================= */
+body.dark {
+    --bg-gradient: linear-gradient(135deg, #02040a, #050b1a, #0a1a33);
+}
+
+body.purple {
+    --primary: #a855f7;
+    --primary-dark: #6d28d9;
+}
+
+body.cyan {
+    --primary: #00d4ff;
+    --primary-dark: #0077ff;
+}
+
+/* ================= REPORT SIDE PANEL ================= */
+.report-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+
+    width: 100%;
+    max-width: 380px;
+    height: 100vh;
+
+    background: rgba(10, 18, 35, 0.95);
+    backdrop-filter: blur(12px);
+
+    border-left: 1px solid rgba(120, 180, 255, 0.2);
+
+    transition: 0.35s ease;
+
+    z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* OPEN STATE */
+.report-panel.open {
+    right: 0;
+}
+
+/* HEADER */
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px;
+    border-bottom: 1px solid rgba(120, 180, 255, 0.2);
+
+    color: white;
+}
+
+.report-header button {
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* CONTENT */
+.report-content {
+    padding: 16px;
+    color: #e6f1ff;
+    line-height: 1.6;
+    overflow-y: auto;
+}
+
+/* ================= DETECTION DRAWER ================= */
+.report-panel {
+    position: fixed;
+    top: 0;
+    right: -420px;
+
+    width: 100%;
+    max-width: 380px;
+    height: 100vh;
+
+    background: rgba(10, 18, 35, 0.96);
+    backdrop-filter: blur(16px);
+
+    border-left: 1px solid rgba(120, 180, 255, 0.2);
+
+    transition: right 0.35s ease;
+
+    z-index: 99999;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* OPEN STATE */
+.report-panel.open {
+    right: 0;
+}
+
+/* HEADER */
+.report-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px;
+    color: white;
+
+    border-bottom: 1px solid rgba(120, 180, 255, 0.2);
+}
+
+.report-header button {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* CONTENT */
+.report-content {
+    padding: 16px;
+    color: #e6f1ff;
+    font-size: 15px;
+    line-height: 1.6;
+    overflow-y: auto;
+}
+
+/* ================= LANGUAGE DROPDOWN TEXT COLOR ================= */
+#langSelect {
+    color: #000;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#menu {
+    z-index: 100000 !important;
+}
+
+#menu-btn {
+    z-index: 100001 !important;
+}
+
+.settings-panel {
+    position: fixed;
+    top: 0;
+    right: -100%; /* hidden off-screen */
+
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+
+    background: rgba(10, 18, 35, 0.96);
+    backdrop-filter: blur(16px);
+
+    border-left: 1px solid rgba(120, 180, 255, 0.2);
+
+    padding: 20px;
+
+    transition: right 0.3s ease;
+
+    z-index: 100002;
+}
+
+/* OPEN STATE */
+.settings-panel.open {
+    right: 0;
+}
+
+/* ================= THEME DROPDOWN FIX ================= */
+#themeSelect {
+    color: #000 !important;
+    background: #ffffff !important;
+}
+
+/* Dropdown options */
+#themeSelect option {
+    color: #000;
+    background: #ffffff;
+}
+
+#feedbackPanel {
+    position: fixed;
+    top: 60px;
+    right: -320px;
+    width: 300px;
+
+    transition: 0.3s ease;
+    z-index: 99999;
+}
+
+#feedbackPanel.open {
+    right: 20px;
+}
+
+.star {
+    font-size: 28px;
+    cursor: pointer;
+    color: #555;
+    transition: 0.2s;
+}
+
+.star.active {
+    color: gold;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.7);
+}
+
+.star:hover {
+    transform: scale(1.2);
+}
