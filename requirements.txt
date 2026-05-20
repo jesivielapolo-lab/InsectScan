@@ -1,8 +1,9 @@
 flask
+gunicorn
 ultralytics
 torch
 opencv-python
 pillow
 deep-translator
-gunicorn
 reportlab
+flask-bcrypt
