@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify, send_file
 from ultralytics import YOLO
 import tempfile
 from datetime import datetime
-from insect_info import insect_info
 
 
 # PDF
